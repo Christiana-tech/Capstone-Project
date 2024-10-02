@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import RecipeDetail from './pages/RecipeDetail'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import axios from 'axios'
 function Layout() {
   return (
     <>
