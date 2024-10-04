@@ -1,22 +1,33 @@
-export async function fetchRecipes (filter){
-  const {query, limit} = filter;
+export async function fetchRecipes(filter) {
+  const { query, limit } = filter;
 
-  const url = `https://api.edamam.com/search?q=${query}&app_id=${process.env.REACT_APP_EDAMAM_APP_ID}&app_key=${process.env.REACT_APP_EDAMAM_API_KEY}&from=0&to=${limit}&`;
+  const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
+   try{
+    const response= await fetch(url);
+    const data= await response.json();
 
+    const recipes = data?.meals?.slice(0,limit) || [];
 
-  const response = await fetch(url)
+    return recipes;
+  } catch (error) {
+    console.error("Error fetching recipes:", error);
+    return [];
+  }
+    }
 
-  const data = await response.json();
-
-  return data?.hits;
-}
-
-export async function fetchRecipe(id){
-const url = `https://api.edamam.com/search?r=http://www.edamam.com/ontologies/edamam.owl%23${id}&app_id=${process.env.REACT_APP_EDAMAM_APP_ID}&app_key=${process.env.REACT_APP_EDAMAM_API_KEY}`
-
-const response = await fetch(url)
-
-const data = await response.json();
-
-return data[0];
-}
+    export async function fetchRecipe(id) {
+      
+      const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
+    
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+    
+      
+        return data?.meals?.[0] || null;
+      } catch (error) {
+        console.error("Error fetching recipe:", error);
+        return null;
+      }
+    }
+    
