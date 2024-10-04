@@ -1,19 +1,17 @@
-import {  Routes, Route,Outlet } from 'react-router-dom';
-import './App.css';
-import Home from './pages/Home';
-import RecipeDetail from './pages/RecipeDetail'
+import {Routes, Route, Outlet} from 'react-router-dom'
+import Home from "./pages/Home";
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import axios from 'axios'
-function Layout() {
+import RecipeDetail from './pages/RecipeDetail';
+
+function Layout(){
   return (
     <>
-      <Navbar />
-      <Outlet/>
+      <Navbar/>
+        <Outlet/>
       <Footer/>
-    
     </>
-  );
+  )
 }
 
 function App() {
