@@ -1,37 +1,30 @@
 import React, { useState } from "react";
+import { FaSearch } from "react-icons/fa";
 
-const Searchbar = ({
-  type,
-  placeholder,
-  required = false,
-  value,
-  name,
-  handleInputChange,
+const SearchBar = ({ onSearch }) => {
+  const [query, setQuery] = useState("");
 
-  rightIcon,
-}) => {
+  const handleSearch = () => {
+    onSearch(query);
+  };
+
   return (
-    <div>
-      <div className='relative'>
-        <input
-          type={type || "text"}
-          name={name}
-          placeholder={placeholder}
-          value={value}
-          onChange={handleInputChange}
-          required={required}
-          className={`bg-black border border-gray-800
-         text-gray-300 text-md rounded-full focus:ring-1 focus:ring-slate-800 focus:border-slate-800 block
-           w-full p-2.5 outline-none px-5 placeholder:text-sm shadow-xl`}
-        />
-        {rightIcon && (
-          <div className='absolute inset-y-0 right-0 flex items-center pr-4 cursor-pointer'>
-            {rightIcon}
-          </div>
-        )}
-      </div>
+    <div className="flex items-center space-x-2">
+      <input
+        type="text"
+        placeholder="Search for a recipe..."
+        className="border rounded p-2 w-full"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
+      <button
+        onClick={handleSearch}
+        className="p-2 bg-blue-500 text-white rounded"
+      >
+        <FaSearch />
+      </button>
     </div>
   );
 };
 
-export default Searchbar;
+export default SearchBar;

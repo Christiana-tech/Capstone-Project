@@ -2,7 +2,7 @@ import {Routes, Route, Outlet} from 'react-router-dom'
 import Home from "./pages/Home";
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import RecipeDetail from './pages/RecipeDetail';
+import RecipeDetail from './components/RecipeDetail';
 
 function Layout(){
   return (
