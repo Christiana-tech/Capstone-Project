@@ -17,7 +17,9 @@ const Home =()=> {
       
    <section id='recipes' className=' md:max-w-[1440px] mx-auto px-4 md:  '>
       <Recipes/>
-    
+   </section>
+   <section id='recipeDetail' className='md:max-w[1440px] mx-auto px-4 md: '>
+     <RecipeDetails/>
    </section>
     </main>
   )

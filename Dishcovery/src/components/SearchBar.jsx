@@ -19,7 +19,7 @@ const SearchBar = ({ onSearch }) => {
       />
       <button
         onClick={handleSearch}
-        className="p-2 bg-blue-500 text-white rounded"
+        className="p-2 bg-black-500 text-white rounded"
       >
         <FaSearch />
       </button>
