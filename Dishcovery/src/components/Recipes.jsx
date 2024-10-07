@@ -9,7 +9,7 @@ import RecipeDetails from './RecipeDetail';
  const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
-
+  
   const handleSearch = async (query) => {
     const results = await fetchRecipes(query);
     setRecipes(results);

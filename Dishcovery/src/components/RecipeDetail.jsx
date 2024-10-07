@@ -19,20 +19,39 @@ const RecipeDetails = () => {
 
   if (!recipe) return <p>Loading recipe...</p>
 
+  
+  const ingredients = Object.keys(recipe)
+    .filter((key) => key.startsWith("strIngredient") && recipe[key])
+    .map((key, index) => ({
+      ingredient: recipe[key],
+      measure: recipe[`strMeasure${index + 1}`] || "",
+    }));
+
+    const instructions = recipe.strInstructions
+    ? recipe.strInstructions.split(".").map((step, index) => step.trim()).filter(step => step)
+    : [];
+
   return (
     <div className="p-4">
       <h2 className="text-2xl font-bold mb-4">{recipe.strMeal}</h2>
-      <img src={recipe.strMealThumb} alt={recipe.strMeal} className="w-full rounded mb-4" />
-      <h3 className="text-lg font-semibold">Ingredients</h3>
-      <ul className="list-disc ml-6 mb-4">
-        {Object.keys(recipe)
-          .filter((key) => key.startsWith("strIngredient") && recipe[key])
-          .map((key, index) => (
-            <li key={index}>{recipe[key]}</li>
-          ))}
+      <img src={recipe.strMealThumb} alt={recipe.strMeal} className="w-100 h-20  rounded mb-4" />
+      <h3 className="text-lg font-semibold mt-4 text-white">Ingredients</h3>
+      <ul className="list-disc ml-6 mb-4 text-white">
+        {ingredients.map((item, index) => (
+          <li key={index}>
+            {item.measure} {item.ingredient}
+          </li>
+        ))}
       </ul>
-      <h3 className="text-lg font-semibold">Instructions</h3>
-      <p>{recipe.strInstructions}</p>
+       
+      <h3 className="text-xl font-semibold mt-6 mb-2 text-white">Preparation Instructions:</h3>
+      <ol className="list-decimal list-inside space-y-2">
+        {instructions.map((step, index) => (
+          <li key={index} className="text-white">
+            {step}.
+          </li>
+        ))}
+      </ol>
       {recipe.strYoutube && (
         <iframe
           src={`https://www.youtube.com/embed/${recipe.strYoutube.split("v=")[1]}`}
@@ -43,6 +62,19 @@ const RecipeDetails = () => {
           allowFullScreen
         ></iframe>
       )}
+
+       {/* Source Link */}
+       {recipe.strSource && (
+        <a
+          href={recipe.strSource}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 hover:underline mt-4 block"
+        >
+          View Full Recipe on TheMealDB
+        </a>
+      )}
+
     </div>
   );
 };
