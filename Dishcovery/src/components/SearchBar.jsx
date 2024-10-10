@@ -9,7 +9,7 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <div className="flex items-center space-x-2">
+    <div className="flex items-center space-x-2 pb-100 mb-20">
       <input
         type="text"
         placeholder="Search for a recipe..."

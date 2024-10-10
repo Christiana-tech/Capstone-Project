@@ -17,8 +17,8 @@ const Header = ({ title, image, type }) => {
         <h1 className='text-white text-4xl md:text-5xl font-bold text-center'>{title}</h1>
         {
           type && (
-            <p className='text-sm mt-4 text-center text-green-500 bg-[#00000090] px-6 py-4 rounded-full '>Welcome to Dishcovery, your passport to culinary adventures!
-              <br className='hidden md:block' /> Discover a treasure trove of
+            <p className='text-sm mt-4  text-center text-green-700 bg-[#00000090] px-6 py-4 rounded-full '>Welcome to Dishcovery, your passport to culinary adventures!
+              <br className='hidden md:block ' /> Discover a treasure trove of
               delectable recipes from around the globe.</p>
           )
         }

@@ -36,7 +36,7 @@ const RecipeDetails = () => {
       <h2 className="text-2xl font-bold mb-4">{recipe.strMeal}</h2>
       <img src={recipe.strMealThumb} alt={recipe.strMeal} className="w-100 h-20  rounded mb-4" />
       <h3 className="text-lg font-semibold mt-4 text-white">Ingredients</h3>
-      <ul className="list-disc ml-6 mb-4 text-white">
+      <ul className="list-none flex flex-wrap gap-2 ml-6 mb-4  text-white">
         {ingredients.map((item, index) => (
           <li key={index}>
             {item.measure} {item.ingredient}

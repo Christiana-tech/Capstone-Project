@@ -28,7 +28,7 @@ const Navbar = () => {
                 </ul>
 
                 <Button
-                    title='Sign in'
+                    title=''
                     containerStyle='hidden md:block bg-transparent border border-white text-white hover:bg-white hover:text-slate-700 rounded-full min-w-[130px]'
                 />
 
