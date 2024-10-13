@@ -5,8 +5,8 @@ const images = [Banner1, Banner2, Banner3, Banner4, Banner5];
 
 const Header = ({ title, image, type }) => {
   return (
-    <div className='w-full h-[100vh]'>
-      <div className='relative w-full h-full md:h-96 sm:h-64'>
+    <div className='w-full h-[100vh] overflow-hidden'>
+      <div className='relative w-full h-full'>
         <img src={image ?? images[Math.floor(Math.random() * images.length)]}
           alt='Hero Image'
           className='w-full sm:w-full md:w-full h-full object-cover bg-no-repeat '
