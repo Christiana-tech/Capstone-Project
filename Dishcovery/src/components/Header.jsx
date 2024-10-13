@@ -9,7 +9,7 @@ const Header = ({ title, image, type }) => {
       <div className='relative w-full h-full'>
         <img src={image ?? images[Math.floor(Math.random() * images.length)]}
           alt='Hero Image'
-          className='w-full h-full object  bg-no-repeat '
+          className='w-full sm:h-48 md:h-64 h-full object  bg-no-repeat '
         />
       </div>
 
