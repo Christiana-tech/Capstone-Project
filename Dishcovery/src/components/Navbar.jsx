@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Logo from '../images/logo.png'
 import { HiMenuAlt3 } from 'react-icons/hi'
 import { AiOutlineClose } from 'react-icons/ai'
-import Button from './Button'
+
 
 const Navbar = () => {
     const [open, setOpen] = useState(false)
@@ -37,7 +37,7 @@ const Navbar = () => {
             <div className={`${open ? "flex" : "hidden"} bg-black flex-col w-full px-4 pt-16 pb-10 text-white gap-6 text-[14px]`}>
                 <a href="/">Home</a>
                 <a href="/#recipes">Recipes</a>
-                <a href="/">Favorites</a>
+                <a href="/favorites">Favorites</a>
             </div>
         </header>
     )

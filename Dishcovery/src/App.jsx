@@ -4,7 +4,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Recipes from './components/Recipes';
 import RecipeDetail from './components/RecipeDetail';
-import RecipeCard from './components/RecipeCard';
+import Favorites from './components/Favorites';
+
 function Layout(){
   return (
     <>
@@ -24,6 +25,7 @@ function App() {
          <Route index element={<Home/>} />
          <Route path="recipe/:id" element={<RecipeDetail/>} />
          <Route path= "recipes" element= {<Recipes/>}/>
+         <Route path="favorites" element={<Favorites />} />
          </Route>
       </Routes>
     
