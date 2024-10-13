@@ -19,10 +19,10 @@ const Navbar = () => {
                     <li className='hover:text-white hover:font-extrabold'>
                         <a href="/">Home</a>
                     </li>
-                    <li className='hover:text-white hover:font-extrabold'>
+                    <li className='hover:text-white hover:font-extrabold ml-9'>
                         <a href="/#recipes">Recipes</a>
                     </li>
-                    <li className='hover:text-white hover:font-extrabold'>
+                    <li className='hover:text-white hover:font-extrabold ml-9'>
                         <a href="/favorites">Favorites</a>
                     </li>
                 </ul>
