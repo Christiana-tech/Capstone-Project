@@ -5,15 +5,15 @@ const images = [Banner1, Banner2, Banner3, Banner4, Banner5];
 
 const Header = ({ title, image, type }) => {
   return (
-    <div className='w-full h-[100vh] overflow-hidden'>
+    <div className='w-full h-[100vh]'>
       <div className='relative w-full h-full'>
         <img src={image ?? images[Math.floor(Math.random() * images.length)]}
           alt='Hero Image'
-          className='w-full sm:w-full md:w-full h-full object-cover bg-no-repeat '
+          className='w-full h-full md:h-full sm:h-full object-cover  bg-no-repeat '
         />
       </div>
 
-      <div className='absolute inset-0 w-full md:w-full sm:w-full h-full md:max-h-full sm:max-h-full bg-gradient-to-t from-black to-transparent top-0 z-8 flex flex-col items-center justify-center pt-40 2xl:pt-20 px-4 '>
+      <div className='absolute w-full h-full md:h-full sm:max-h-full  bg-gradient-to-t from-black to-transparent top-0 z-8 flex flex-col items-center justify-center pt-40 2xl:pt-20 px-4 '>
         <h1 className='text-white text-4xl md:text-5xl font-bold text-center'>{title}</h1>
         {
           type && (
