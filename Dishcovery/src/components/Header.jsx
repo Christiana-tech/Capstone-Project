@@ -9,11 +9,11 @@ const Header = ({ title, image, type }) => {
       <div className='relative w-full h-full'>
         <img src={image ?? images[Math.floor(Math.random() * images.length)]}
           alt='Hero Image'
-          className='w-full sm:w-full md:w-full h-full object-cover bg-no-repeat '
+          className='w-full sm:w-full md:w-full  md:h-full sm:h-full object-cover bg-no-repeat '
         />
       </div>
 
-      <div className='absolute w-full h-full bg-gradient-to-t from-black to-transparent top-0 z-8 flex flex-col items-center justify-center pt-40 2xl:pt-20 px-4 '>
+      <div className='absolute w-full h-full    bg-gradient-to-t from-black to-transparent top-0 z-8 flex flex-col items-center justify-center pt-40 2xl:pt-20 px-4 '>
         <h1 className='text-white text-4xl md:text-5xl font-bold text-center'>{title}</h1>
         {
           type && (
