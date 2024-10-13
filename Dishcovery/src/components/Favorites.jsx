@@ -1,23 +1,29 @@
-import React from "react";
-const Favorites = ({ favorites, toggleFavorite }) => (
-    <div className="p-4">
-      <h2 className="text-2xl font-semibold mb-4">Your Favorites</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {favorites.length > 0 ? (
+import React, { useEffect, useState } from "react";
+import RecipeCard from "./RecipeCard"; // Assuming you're using RecipeCard component
+
+const Favorites = () => {
+  const [favorites, setFavorites] = useState([]);
+
+  useEffect(() => {
+    // Retrieve favorites from localStorage and ensure it is an array
+    const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    setFavorites(storedFavorites);
+  }, []);
+
+  return (
+    <div>
+      <h1>Your Favorite Recipes</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+        {favorites && favorites.length > 0 ? ( // Ensure favorites is defined and has items
           favorites.map((recipe) => (
-            <RecipeCard
-              key={recipe.idMeal}
-              recipe={recipe}
-              toggleFavorite={toggleFavorite}
-              isFavorite={true}
-            />
+            <RecipeCard key={recipe.idMeal} recipe={recipe} isFavorite={true} />
           ))
         ) : (
-          <p className="text-green-600">No favorite recipes yet!</p>
+          <p>No favorite recipes yet.</p>
         )}
       </div>
     </div>
   );
-  
-  export default Favorites;
-  
+};
+
+export default Favorites;

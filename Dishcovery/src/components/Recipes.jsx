@@ -48,6 +48,7 @@ const Recipes = () => {
   // Load Favorites from Local Storage
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    console.log("Loaded from localStorage:", storedFavorites);
     setFavorites(storedFavorites);
   }, []);
 
