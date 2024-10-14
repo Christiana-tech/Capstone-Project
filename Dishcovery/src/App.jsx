@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Recipes from './components/Recipes';
 import RecipeDetail from './components/RecipeDetail';
-import Favorites from './components/Favorites';
+import Favorites from './pages/Favorites';
 
 function Layout(){
   return (

@@ -15,7 +15,6 @@ const Recipes = () => {
   const initialQuery = "";
   const limit = 20;
 
-  // Search Handler
   const handleSearch = async (query) => {
     setLoading(true);
     setError(null);
@@ -34,30 +33,28 @@ const Recipes = () => {
     } catch (err) {
       setError(err.message === "Failed to fetch" 
         ? "Network issue. Please check your internet connection." 
-        : "Failed to load recipes. Please try again later.");
+        : "No Recipe Found.");
     } finally {
       setLoading(false);
     }
   };
 
-  // Initial Search
   useEffect(() => {
     handleSearch(initialQuery);
   }, []);
 
-  // Load Favorites from Local Storage
+
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
     console.log("Loaded from localStorage:", storedFavorites);
     setFavorites(storedFavorites);
   }, []);
 
-  // Save Favorites to Local Storage
-  useEffect(() => {
+   useEffect(() => {
     localStorage.setItem('favorites', JSON.stringify(favorites));
   }, [favorites]);
 
-  // Toggle Favorite Function
+  
   const toggleFavorite = (recipe) => {
     setFavorites((prevFavorites) => {
       return prevFavorites.some((fav) => fav.idMeal === recipe.idMeal)
