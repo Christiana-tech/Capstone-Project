@@ -6,7 +6,7 @@ import React from "react";
 const RecipeCard = ({ recipe, toggleFavorite, isFavorite }) => {
   return (
     <div className="border rounded-lg p-3 w-34 my-5 hover:shadow-lg cursor-pointer transition duration-200 bg-gray-100">
-      {/* Wrap only the image and text in the Link */}
+      
       <Link to={`/recipe/${recipe.idMeal}`}>
         <img
           src={recipe.strMealThumb || "/placeholder.jpg"}
@@ -18,8 +18,8 @@ const RecipeCard = ({ recipe, toggleFavorite, isFavorite }) => {
         <p className="text-sm">Category: {recipe.strCategory || "N/A"}</p>
         <p className="text-sm">Cuisine: {recipe.strArea || "N/A"}</p>
       </Link>
-      {/* Favorite Button */}
-      <button 
+     
+           <button 
         onClick={(e) => {
           e.preventDefault(); // Prevents Link navigation
           e.stopPropagation(); // Prevents event bubbling
