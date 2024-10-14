@@ -34,9 +34,9 @@ const RecipeDetails = () => {
   return (
     <div className="p-4">
       <h2 className="text-2xl font-bold mb-4">{recipe.strMeal}</h2>
-      <img src={recipe.strMealThumb} alt={recipe.strMeal} className="w-100 h-20  rounded mb-4" />
-      <h3 className="text-lg font-semibold mt-4 text-white">Ingredients</h3>
-      <ul className="list-none flex flex-wrap gap-2 ml-6 mb-4  text-white">
+      <img src={recipe.strMealThumb} alt={recipe.strMeal} className="w-56 h-25  rounded mb-4" />
+      <h3 className="text-xl font-extrabold mt-10 text-green-600 ">Ingredients:</h3>
+      <ul className="list-disc  flex-wrap gap-3 ml-6 mb-6  text-white">
         {ingredients.map((item, index) => (
           <li key={index}>
             {item.measure} {item.ingredient}
@@ -44,7 +44,7 @@ const RecipeDetails = () => {
         ))}
       </ul>
        
-      <h3 className="text-xl font-semibold mt-6 mb-2 text-white">Preparation Instructions:</h3>
+      <h3 className="text-xl font-extrabold mt-10 mb-2 text-green-600">Preparation Instructions:</h3>
       <ol className="list-decimal list-inside space-y-2">
         {instructions.map((step, index) => (
           <li key={index} className="text-white">
@@ -56,14 +56,14 @@ const RecipeDetails = () => {
         <iframe
           src={`https://www.youtube.com/embed/${recipe.strYoutube.split("v=")[1]}`}
           title="Recipe Video"
-          className="w-full h-64 mt-4"
+          className="w-full h-64 mt-20"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         ></iframe>
       )}
 
-       {/* Source Link */}
+       
        {recipe.strSource && (
         <a
           href={recipe.strSource}

@@ -1,5 +1,5 @@
-import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
-import Button from "./Button"
+import { FaLinkedin, FaTwitter, FaYoutube, FaGithub} from "react-icons/fa";
+
 
 const Footer = () => {
     return (
@@ -25,44 +25,15 @@ const Footer = () => {
                             href='#'
                             className='block md:inline-block py-2 hover:text-gray-500'
                         >
-                            About
-                        </a>
-                        <a
-                            href='#'
-                            className='block md:inline-block py-2 hover:text-gray-500'
-                        >
-                            Services
-                        </a>
-                        <a
-                            href='#'
-                            className='block md:inline-block py-2 hover:text-gray-500'
-                        >
-                            Contact
-                        </a>
-                        <a
-                            href='#'
-                            className='block md:inline-block py-2 hover:text-gray-500'
-                        >
-                            Chiefs
+                            Recipes
                         </a>
                     </div>
                 </div>
 
-                //*<div>
+               <div>
                     <p>LEGAL</p>
                     <div className='flex flex-col text-start mb-4 md:mb-0 text-[14px]'>
-                        <a
-                            href='#'
-                            className='block md:inline-block py-2 hover:text-gray-500'
-                        >
-                            Terms and Conditions
-                        </a>
-                        <a
-                            href='#'
-                            className='block md:inline-block py-2 hover:text-gray-500'
-                        >
-                            License Agreement
-                        </a>
+                       
                         <a
                             href='#'
                             className='block md:inline-block py-2 hover:text-gray-500'
@@ -75,12 +46,6 @@ const Footer = () => {
                         >
                             Copyright Information
                         </a>
-                        <a
-                            href='#'
-                            className='block md:inline-block py-2 hover:text-gray-500'
-                        >
-                            Cookies Policy
-                        </a>
                     </div>
                 </div>
 
@@ -91,14 +56,14 @@ const Footer = () => {
                             href='#'
                             className='bg-black-600 p-1.5 rounded-sm text-white hover:text-gray-500 hover:scale-110'
                         >
-                            <FaFacebook size={18} />
+                            <FaGithub size={18} />
                         </a>
 
                         <a
                             href='#'
                             className='bg-black-600 p-1.5 rounded-sm text-white hover:text-gray-500 hover:scale-110'
                         >
-                            <FaInstagram size={18} />
+                            <FaLinkedin size={18} />
                         </a>
                         <a
                             href='#'
@@ -114,11 +79,7 @@ const Footer = () => {
                         </a>
                     </div>
 
-                    <Button
-                        title='Sign up'
-                        btnType='button'
-                        containerStyle='mt-10 md:block bg-transparent border border-white text-white hover:bg-white hover:text-black rounded-md min-w-[130px]'
-                    />
+                
                 </div>
             </div>
 
