@@ -25,7 +25,7 @@ function App() {
          <Route index element={<Home/>} />
          <Route path="recipe/:id" element={<RecipeDetail/>} />
          <Route path= "recipes" element= {<Recipes/>}/>
-         <Route path="Favorites" element={<Favorites />} />
+         <Route path="favorites" element={<Favorites />} />
          </Route>
       </Routes>
     
