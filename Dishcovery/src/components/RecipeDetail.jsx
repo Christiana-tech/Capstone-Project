@@ -17,7 +17,7 @@ const RecipeDetails = () => {
     fetchRecipeDetails();
   }, [id]);
 
-  if (!recipe) return <p>Loading recipe...</p>
+  if (!recipe) return <p >Loading recipe...</p>
 
   
   const ingredients = Object.keys(recipe)

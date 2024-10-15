@@ -69,7 +69,7 @@ const Recipes = () => {
 
       {loading && <p className="text-center text-white">Loading recipes...</p>}
       {error && <p className="text-center text-white">{error}</p>}
-      {noResults && <p className="text-center text-white">No recipes found. Please try a different search.</p>}
+      {noResults && <p className="text-center text-white">Network Issue. Please Check Your Internet Connection</p>}
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
         {recipes.map((recipe) => (

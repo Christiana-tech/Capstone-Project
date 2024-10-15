@@ -5,7 +5,7 @@ import RecipeDetails from '../components/RecipeDetail'
 import RecipeCard from '../components/RecipeCard'
 const Home =()=> {
   return (
-    <main className='w-full flex-col  inset-x-0  top-10  '>
+    <main className='w-full flex-col  inset-x-0  top-10   '>
       <Header
        title={
         <p >Make Cooking Fun
