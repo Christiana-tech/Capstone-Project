@@ -1,35 +1,35 @@
-
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { fetchRecipes } from "../utils/api";
+import axios from "axios";
 
 const RecipeDetails = () => {
-  const { id } = useParams();
+  const { id } = useParams(); 
   const [recipe, setRecipe] = useState(null);
 
   useEffect(() => {
-    const fetchRecipeDetails = async () => {
-      const results = await fetchRecipes(""); 
-      const selectedRecipe = results?.find((r) => r.idMeal === id);
-      setRecipe(selectedRecipe);
-    };
-
-    fetchRecipeDetails();
+    
+    axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
+      .then(response => {
+        console.log("Recipe data:", response.data.meals[0]); 
+                setRecipe(response.data.meals[0]);
+      })
+      .catch(error => console.error("Error fetching recipe details:", error));
   }, [id]);
 
-  if (!recipe) return <p >Loading recipe...</p>
+  if (!recipe) return <p>Loading...</p>; 
 
-  
+ 
   const ingredients = Object.keys(recipe)
-    .filter((key) => key.startsWith("strIngredient") && recipe[key])
+    .filter(key => key.startsWith("strIngredient") && recipe[key])
     .map((key, index) => ({
       ingredient: recipe[key],
       measure: recipe[`strMeasure${index + 1}`] || "",
     }));
 
-    const instructions = recipe.strInstructions
-    ? recipe.strInstructions.split(".").map((step, index) => step.trim()).filter(step => step)
+  const instructions = recipe.strInstructions
+    ? recipe.strInstructions.split(".").map(step => step.trim()).filter(step => step)
     : [];
+
 
   return (
     <div className="p-4">
