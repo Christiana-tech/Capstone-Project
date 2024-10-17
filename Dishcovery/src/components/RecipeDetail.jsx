@@ -32,9 +32,12 @@ const RecipeDetails = () => {
 
 
   return (
-    <div className="p-4">
-      <h2 className="text-2xl font-bold mb-4">{recipe.strMeal}</h2>
-      <img src={recipe.strMealThumb} alt={recipe.strMeal} className="w-56 h-25  rounded mb-4" />
+    <div className="p-4 ">
+    
+      <img src={recipe.strMealThumb} alt={recipe.strMeal} className="w-56 h-25  rounded mb-4 pt-16" />
+      <h2 className="text-lg font-semibold mt-2 text-white">{recipe.strMeal || "Unknown Recipe"}</h2>
+      <p className="text-sm text-green-600 font-bold">Category: {recipe.strCategory || "N/A"}</p>
+        <p className="text-sm text-blue-600 font-bold">Cuisine: {recipe.strArea || "N/A"}</p>
       <h3 className="text-xl font-extrabold mt-10 text-green-600 ">Ingredients:</h3>
       <ul className="list-disc  flex-wrap gap-3 ml-6 mb-6  text-white">
         {ingredients.map((item, index) => (
