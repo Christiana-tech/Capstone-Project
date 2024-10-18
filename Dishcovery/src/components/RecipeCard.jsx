@@ -1,4 +1,4 @@
-//import React from 'react'
+
 import { Link } from 'react-router-dom';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import React from "react";
@@ -21,12 +21,12 @@ const RecipeCard = ({ recipe, toggleFavorite, isFavorite }) => {
      
            <button 
         onClick={(e) => {
-          e.preventDefault(); // Prevents Link navigation
-          e.stopPropagation(); // Prevents event bubbling
+          e.preventDefault();
+          e.stopPropagation();
           toggleFavorite(recipe);
         }}
         aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
-        className="mt-2"
+        className="mt-2 "
       >
         {isFavorite ? <AiFillHeart color="green" /> : <AiOutlineHeart />}
       </button>
